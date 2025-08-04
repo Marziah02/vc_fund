@@ -1,23 +1,44 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Calendar, Clock, ArrowRight, User, Share2, Bookmark, ThumbsUp, MessageCircle } from 'lucide-react';
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Calendar,
+  Clock,
+  ArrowRight,
+  User,
+  Share2,
+  Bookmark,
+  ThumbsUp,
+  MessageCircle,
+} from "lucide-react";
 
 export function BlogSection() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPost, setSelectedPost] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const categories = ['All', 'Industry Insights', 'Portfolio Updates', 'Market Trends', 'Startup Tips'];
+  const categories = [
+    "All",
+    "Industry Insights",
+    "Portfolio Updates",
+    "Market Trends",
+    "Startup Tips",
+  ];
 
   const blogPosts = [
     {
-      title: 'The Future of AI in Enterprise Software',
-      excerpt: 'Exploring how artificial intelligence is transforming the enterprise software landscape and what it means for investors.',
+      title: "The Future of AI in Enterprise Software",
+      excerpt:
+        "Exploring how artificial intelligence is transforming the enterprise software landscape and what it means for investors.",
       fullContent: `
         <p>Artificial Intelligence is no longer a futuristic concept—it's reshaping the enterprise software landscape today. As venture capitalists, we're witnessing unprecedented opportunities in AI-driven solutions that are fundamentally changing how businesses operate.</p>
         
@@ -41,21 +62,25 @@ export function BlogSection() {
         <h3>Looking Ahead</h3>
         <p>The next five years will be critical for AI adoption in enterprise software. We expect to see continued consolidation in the market, with the most innovative and well-funded companies emerging as leaders in their respective niches.</p>
       `,
-      category: 'Industry Insights',
-      author: 'Sarah Chen',
-      authorBio: 'Managing Partner at VCFund.vc with 15+ years of experience in venture capital and enterprise software investments.',
-      authorImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=150',
-      date: '2025-01-15',
-      readTime: '5 min read',
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600',
+      category: "Industry Insights",
+      author: "Sarah Chen",
+      authorBio:
+        "Managing Partner at VCFund.vc with 15+ years of experience in venture capital and enterprise software investments.",
+      authorImage:
+        "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=150",
+      date: "2025-01-15",
+      readTime: "5 min read",
+      image:
+        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600",
       featured: true,
-      tags: ['AI', 'Enterprise Software', 'Investment Trends', 'Technology'],
+      tags: ["AI", "Enterprise Software", "Investment Trends", "Technology"],
       likes: 127,
       comments: 23,
     },
     {
-      title: 'Portfolio Spotlight: TechFlow\'s Series A Success',
-      excerpt: 'How TechFlow raised $2.5M Series A and achieved 340% growth in just 18 months.',
+      title: "Portfolio Spotlight: TechFlow's Series A Success",
+      excerpt:
+        "How TechFlow raised $2.5M Series A and achieved 340% growth in just 18 months.",
       fullContent: `
         <p>We're thrilled to share the incredible success story of TechFlow, one of our portfolio companies that recently closed a $2.5M Series A round and achieved remarkable 340% growth in just 18 months.</p>
         
@@ -83,21 +108,25 @@ export function BlogSection() {
         <h3>What's Next</h3>
         <p>With the Series A funding, TechFlow plans to expand their engineering team, enhance their AI capabilities, and accelerate international expansion. We're excited to continue supporting their journey as they build the future of enterprise automation.</p>
       `,
-      category: 'Portfolio Updates',
-      author: 'Michael Rodriguez',
-      authorBio: 'Investment Partner specializing in AI and enterprise software investments.',
-      authorImage: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=150',
-      date: '2025-01-12',
-      readTime: '4 min read',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
+      category: "Portfolio Updates",
+      author: "Michael Rodriguez",
+      authorBio:
+        "Investment Partner specializing in AI and enterprise software investments.",
+      authorImage:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=150",
+      date: "2025-01-12",
+      readTime: "4 min read",
+      image:
+        "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600",
       featured: false,
-      tags: ['Portfolio', 'Series A', 'Growth', 'TechFlow'],
+      tags: ["Portfolio", "Series A", "Growth", "TechFlow"],
       likes: 89,
       comments: 15,
     },
     {
-      title: 'Market Analysis: CleanTech Investment Trends 2025',
-      excerpt: 'Deep dive into the renewable energy sector and emerging opportunities for venture capital.',
+      title: "Market Analysis: CleanTech Investment Trends 2025",
+      excerpt:
+        "Deep dive into the renewable energy sector and emerging opportunities for venture capital.",
       fullContent: `
         <p>The CleanTech sector is experiencing a renaissance, driven by increasing environmental awareness, supportive government policies, and technological breakthroughs. As we look ahead to 2025, we see unprecedented opportunities for venture capital investment in renewable energy and sustainability solutions.</p>
         
@@ -134,21 +163,30 @@ export function BlogSection() {
         <h3>Looking Forward</h3>
         <p>The CleanTech sector presents both tremendous opportunities and unique challenges. Success requires careful evaluation of technology risks, market dynamics, and regulatory environments. We believe that companies addressing real environmental problems with innovative, scalable solutions will create significant value for investors and society.</p>
       `,
-      category: 'Market Trends',
-      author: 'Emily Johnson',
-      authorBio: 'Principal focusing on CleanTech and sustainability investments.',
-      authorImage: 'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=150',
-      date: '2025-01-10',
-      readTime: '7 min read',
-      image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600',
+      category: "Market Trends",
+      author: "Emily Johnson",
+      authorBio:
+        "Principal focusing on CleanTech and sustainability investments.",
+      authorImage:
+        "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=150",
+      date: "2025-01-10",
+      readTime: "7 min read",
+      image:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600",
       featured: false,
-      tags: ['CleanTech', 'Renewable Energy', 'Market Analysis', 'Sustainability'],
+      tags: [
+        "CleanTech",
+        "Renewable Energy",
+        "Market Analysis",
+        "Sustainability",
+      ],
       likes: 156,
       comments: 31,
     },
     {
-      title: '10 Essential Tips for First-Time Founders',
-      excerpt: 'Key insights and practical advice for entrepreneurs starting their first venture.',
+      title: "10 Essential Tips for First-Time Founders",
+      excerpt:
+        "Key insights and practical advice for entrepreneurs starting their first venture.",
       fullContent: `
         <p>Starting your first company is both exhilarating and challenging. Having worked with hundreds of entrepreneurs over the years, we've identified key patterns that separate successful founders from those who struggle. Here are our top 10 tips for first-time founders.</p>
         
@@ -185,21 +223,25 @@ export function BlogSection() {
         <h3>Final Thoughts</h3>
         <p>Remember, every successful entrepreneur started as a first-time founder. The key is to stay focused, be adaptable, and never stop learning. We're here to support entrepreneurs on their journey and look forward to hearing from founders who are building the future.</p>
       `,
-      category: 'Startup Tips',
-      author: 'Sarah Chen',
-      authorBio: 'Managing Partner at VCFund.vc with 15+ years of experience in venture capital and enterprise software investments.',
-      authorImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=150',
-      date: '2025-01-08',
-      readTime: '6 min read',
-      image: 'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600',
+      category: "Startup Tips",
+      author: "Sarah Chen",
+      authorBio:
+        "Managing Partner at VCFund.vc with 15+ years of experience in venture capital and enterprise software investments.",
+      authorImage:
+        "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=150",
+      date: "2025-01-08",
+      readTime: "6 min read",
+      image:
+        "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600",
       featured: false,
-      tags: ['Startup Tips', 'Entrepreneurship', 'Founders', 'Business Advice'],
+      tags: ["Startup Tips", "Entrepreneurship", "Founders", "Business Advice"],
       likes: 203,
       comments: 45,
     },
     {
-      title: 'HealthTech Revolution: Digital Transformation in Healthcare',
-      excerpt: 'How digital health platforms are reshaping patient care and creating new investment opportunities.',
+      title: "HealthTech Revolution: Digital Transformation in Healthcare",
+      excerpt:
+        "How digital health platforms are reshaping patient care and creating new investment opportunities.",
       fullContent: `
         <p>The healthcare industry is undergoing a digital transformation that's creating unprecedented opportunities for innovation and investment. From telemedicine to AI-powered diagnostics, HealthTech companies are revolutionizing how we approach patient care.</p>
         
@@ -235,21 +277,30 @@ export function BlogSection() {
         <h3>Future Outlook</h3>
         <p>The HealthTech sector is still in its early stages, with tremendous potential for growth. We expect continued innovation in areas like personalized medicine, mental health solutions, and integrated care platforms. The companies that can navigate regulatory challenges while delivering measurable health outcomes will create significant value.</p>
       `,
-      category: 'Industry Insights',
-      author: 'Michael Rodriguez',
-      authorBio: 'Investment Partner specializing in AI and enterprise software investments.',
-      authorImage: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=150',
-      date: '2025-01-05',
-      readTime: '8 min read',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
+      category: "Industry Insights",
+      author: "Michael Rodriguez",
+      authorBio:
+        "Investment Partner specializing in AI and enterprise software investments.",
+      authorImage:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=150",
+      date: "2025-01-05",
+      readTime: "8 min read",
+      image:
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600",
       featured: false,
-      tags: ['HealthTech', 'Digital Health', 'AI Diagnostics', 'Healthcare Innovation'],
+      tags: [
+        "HealthTech",
+        "Digital Health",
+        "AI Diagnostics",
+        "Healthcare Innovation",
+      ],
       likes: 134,
       comments: 28,
     },
     {
-      title: 'Navigating the Current FinTech Landscape',
-      excerpt: 'Understanding the evolving financial technology sector and identifying promising investment targets.',
+      title: "Navigating the Current FinTech Landscape",
+      excerpt:
+        "Understanding the evolving financial technology sector and identifying promising investment targets.",
       fullContent: `
         <p>The FinTech sector continues to evolve rapidly, driven by changing consumer expectations, regulatory developments, and technological innovations. As investors, we're seeing both tremendous opportunities and increased competition in this dynamic market.</p>
         
@@ -294,26 +345,30 @@ export function BlogSection() {
         <h3>Looking Ahead</h3>
         <p>The FinTech sector will continue to evolve, with opportunities shifting toward more specialized solutions and B2B applications. Companies that can demonstrate clear value propositions, regulatory compliance, and sustainable unit economics will thrive in this maturing market.</p>
       `,
-      category: 'Market Trends',
-      author: 'Emily Johnson',
-      authorBio: 'Principal focusing on CleanTech and sustainability investments.',
-      authorImage: 'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=150',
-      date: '2025-01-03',
-      readTime: '5 min read',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600',
+      category: "Market Trends",
+      author: "Emily Johnson",
+      authorBio:
+        "Principal focusing on CleanTech and sustainability investments.",
+      authorImage:
+        "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=150",
+      date: "2025-01-03",
+      readTime: "5 min read",
+      image:
+        "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600",
       featured: false,
-      tags: ['FinTech', 'Financial Services', 'B2B', 'RegTech'],
+      tags: ["FinTech", "Financial Services", "B2B", "RegTech"],
       likes: 98,
       comments: 19,
     },
   ];
 
-  const filteredPosts = selectedCategory === 'All' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+  const filteredPosts =
+    selectedCategory === "All"
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === selectedCategory);
 
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = filteredPosts.filter(post => !post.featured);
+  const featuredPost = blogPosts.find((post) => post.featured);
+  const regularPosts = filteredPosts.filter((post) => !post.featured);
 
   const openModal = (post: any) => {
     setSelectedPost(post);
@@ -329,9 +384,12 @@ export function BlogSection() {
     <section id="blog" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest Insights</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Latest Insights
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with the latest trends, insights, and stories from the venture capital world.
+            Stay updated with the latest trends, insights, and stories from the
+            venture capital world.
           </p>
         </div>
 
@@ -340,9 +398,13 @@ export function BlogSection() {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={selectedCategory === category ? 'default' : 'outline'}
+              variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className={selectedCategory === category ? 'bg-blue-600 hover:bg-blue-700' : ''}
+              className={
+                selectedCategory === category
+                  ? "bg-blue-600 hover:bg-blue-700"
+                  : ""
+              }
             >
               {category}
             </Button>
@@ -350,13 +412,16 @@ export function BlogSection() {
         </div>
 
         {/* Featured Post */}
-        {featuredPost && selectedCategory === 'All' && (
+        {featuredPost && selectedCategory === "All" && (
           <div className="mb-16">
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer" onClick={() => openModal(featuredPost)}>
+            <Card
+              className="overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+              onClick={() => openModal(featuredPost)}
+            >
               <div className="md:flex">
                 <div className="md:w-1/2">
-                  <img 
-                    src={featuredPost.image} 
+                  <img
+                    src={featuredPost.image}
                     alt={featuredPost.title}
                     className="w-full h-64 md:h-full object-cover"
                   />
@@ -366,9 +431,7 @@ export function BlogSection() {
                     <Badge className="bg-blue-100 text-blue-800 mr-3">
                       Featured
                     </Badge>
-                    <Badge variant="outline">
-                      {featuredPost.category}
-                    </Badge>
+                    <Badge variant="outline">{featuredPost.category}</Badge>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {featuredPost.title}
@@ -391,7 +454,13 @@ export function BlogSection() {
                         {featuredPost.readTime}
                       </div>
                     </div>
-                    <Button className="bg-blue-600 hover:bg-blue-700" onClick={(e) => { e.stopPropagation(); openModal(featuredPost); }}>
+                    <Button
+                      className="bg-blue-600 hover:bg-blue-700"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openModal(featuredPost);
+                      }}
+                    >
                       Read More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -405,15 +474,22 @@ export function BlogSection() {
         {/* Regular Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regularPosts.map((post, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group cursor-pointer" onClick={() => openModal(post)}>
+            <Card
+              key={index}
+              className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group cursor-pointer"
+              onClick={() => openModal(post)}
+            >
               <div className="relative overflow-hidden">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="bg-white/90 text-gray-900">
+                  <Badge
+                    variant="secondary"
+                    className="bg-white/90 text-gray-900"
+                  >
                     {post.category}
                   </Badge>
                 </div>
@@ -440,7 +516,14 @@ export function BlogSection() {
                     <Calendar className="h-4 w-4 mr-1" />
                     {new Date(post.date).toLocaleDateString()}
                   </div>
-                  <Button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0" onClick={(e) => { e.stopPropagation(); openModal(post); }}>
+                  <Button
+                    variant="ghost"
+                    className="text-blue-600 hover:text-blue-700 p-0"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openModal(post);
+                    }}
+                  >
                     Read More
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>
@@ -481,19 +564,23 @@ export function BlogSection() {
                   {selectedPost.title}
                 </DialogTitle>
               </DialogHeader>
-              
+
               <div className="space-y-6">
                 {/* Author and Meta Info */}
                 <div className="flex items-center justify-between border-b pb-4">
                   <div className="flex items-center space-x-4">
-                    <img 
-                      src={selectedPost.authorImage} 
+                    <img
+                      src={selectedPost.authorImage}
                       alt={selectedPost.author}
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="font-semibold text-gray-900">{selectedPost.author}</h4>
-                      <p className="text-sm text-gray-600">{selectedPost.authorBio}</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {selectedPost.author}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {selectedPost.authorBio}
+                      </p>
                     </div>
                   </div>
                   <div className="text-right text-sm text-gray-500">
@@ -503,73 +590,95 @@ export function BlogSection() {
                     </div>
                     <div className="flex items-center">
                       <Clock className="h-4 w-4 mr-1" />
-                {/* Hero Image */}
-                <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
-                  <img 
-                    src={selectedPost.image} 
-                    alt={selectedPost.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                      {/* Hero Image */}
+                      <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
+                        <img
+                          src={selectedPost.image}
+                          alt={selectedPost.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       {selectedPost.readTime}
-                {/* Article Content */}
-                <div className="prose prose-lg max-w-none">
-                  <div dangerouslySetInnerHTML={{ __html: selectedPost.fullContent }} />
-                </div>
-                    </div>
-                {/* Tags */}
-                <div className="border-t pt-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Tags</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedPost.tags.map((tag: string, index: number) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                  </div>
-                {/* Engagement Stats */}
-                <div className="border-t pt-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-6">
-                      <div className="flex items-center space-x-2">
-                        <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600">
-                          <ThumbsUp className="h-4 w-4 mr-1" />
-                          {selectedPost.likes}
-                        </Button>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600">
-                          <MessageCircle className="h-4 w-4 mr-1" />
-                          {selectedPost.comments}
-                        </Button>
+                      {/* Article Content */}
+                      <div className="prose prose-lg max-w-none">
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: selectedPost.fullContent,
+                          }}
+                        />
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Button variant="outline" size="sm">
-                        <Share2 className="h-4 w-4 mr-2" />
-                        Share
-                      </Button>
-                      <Button variant="outline" size="sm">
-                        <Bookmark className="h-4 w-4 mr-2" />
-                        Save
-                      </Button>
+                    {/* Tags */}
+                    <div className="border-t pt-4">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                        Tags
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedPost.tags.map((tag: string, index: number) => (
+                          <Badge
+                            key={index}
+                            variant="outline"
+                            className="text-xs"
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                  {/* Engagement Stats */}
+                  <div className="border-t pt-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-6">
+                        <div className="flex items-center space-x-2">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="text-gray-600 hover:text-blue-600"
+                          >
+                            <ThumbsUp className="h-4 w-4 mr-1" />
+                            {selectedPost.likes}
+                          </Button>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="text-gray-600 hover:text-blue-600"
+                          >
+                            <MessageCircle className="h-4 w-4 mr-1" />
+                            {selectedPost.comments}
+                          </Button>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Button variant="outline" size="sm">
+                          <Share2 className="h-4 w-4 mr-2" />
+                          Share
+                        </Button>
+                        <Button variant="outline" size="sm">
+                          <Bookmark className="h-4 w-4 mr-2" />
+                          Save
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 {/* Author Bio */}
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <div className="flex items-start space-x-4">
-                    <img 
-                      src={selectedPost.authorImage} 
+                    <img
+                      src={selectedPost.authorImage}
                       alt={selectedPost.author}
                       className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">{selectedPost.author}</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">{selectedPost.authorBio}</p>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                        {selectedPost.author}
+                      </h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {selectedPost.authorBio}
+                      </p>
                     </div>
                   </div>
                 </div>

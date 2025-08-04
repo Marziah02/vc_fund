@@ -18,8 +18,8 @@ export function HeroSection() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Funding the <span className="text-blue-400">Future</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <span className="text-yellow-400 font-extrabold">Funding the Future</span>
           </h1>
           <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed">
             We partner with visionary entrepreneurs to build tomorrow's most 

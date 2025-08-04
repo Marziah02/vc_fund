@@ -2,7 +2,10 @@
   "name": "nextjs",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Marziah02.github.io/vc_fund",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -67,5 +70,8 @@
     "typescript": "5.2.2",
     "vaul": "^0.9.9",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

@@ -621,6 +621,7 @@ export function BlogSection() {
                             className="text-xs"
                           >
                             {tag}
+                            {/* iiiiiiiiiiii */}
                           </Badge>
                         ))}
                       </div>

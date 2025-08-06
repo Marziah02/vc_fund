@@ -4,9 +4,8 @@
   "private": true,
   "homepage": "https://Marziah02.github.io/vc_fund",
   "scripts": {
-    "export": "next export",
-    "predeploy": "npm run build && npm run export",
-    "deploy": "gh-pages -d out",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
